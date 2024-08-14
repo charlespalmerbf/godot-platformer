@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ckupq806d2cu6"]
+[gd_scene load_steps=14 format=3 uid="uid://ckupq806d2cu6"]
 
 [ext_resource type="PackedScene" uid="uid://cq03jejcywwkf" path="res://scenes/player.tscn" id="1_tu2x1"]
 [ext_resource type="Texture2D" uid="uid://du6gxabrfnny2" path="res://assets/sprites/world_tileset.png" id="2_s0jat"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://nlqppukknmg2" path="res://scenes/coin.tscn" id="4_7jsqt"]
 [ext_resource type="PackedScene" uid="uid://d2h3bicf60uvr" path="res://scenes/killzone.tscn" id="5_job23"]
 [ext_resource type="PackedScene" uid="uid://baa0qj1biokv7" path="res://scenes/slime.tscn" id="6_khxkx"]
+[ext_resource type="FontFile" uid="uid://daft6ttujmahy" path="res://assets/fonts/PixelOperator8.ttf" id="7_pq2v2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6kw0c"]
 texture = ExtResource("2_s0jat")
@@ -452,6 +453,8 @@ _data = {
 
 [node name="Game" type="Node2D"]
 
+[node name="GameManager" type="Node" parent="."]
+
 [node name="Player" parent="." instance=ExtResource("1_tu2x1")]
 position = Vector2(14, 25)
 
@@ -518,3 +521,35 @@ autoplay = "move"
 
 [node name="Slime" parent="." instance=ExtResource("6_khxkx")]
 position = Vector2(511, 52)
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="Labels"]
+offset_left = -132.0
+offset_top = 63.0
+offset_right = -41.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
+theme_override_fonts/font = ExtResource("7_pq2v2")
+theme_override_font_sizes/font_size = 8
+text = "Space to jump."
+
+[node name="Label2" type="Label" parent="Labels"]
+offset_left = 353.0
+offset_top = 54.0
+offset_right = 444.0
+offset_bottom = 66.0
+theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
+theme_override_fonts/font = ExtResource("7_pq2v2")
+theme_override_font_sizes/font_size = 8
+text = "Falling hurts!"
+
+[node name="Label3" type="Label" parent="Labels"]
+offset_left = 681.0
+offset_top = -68.0
+offset_right = 775.0
+offset_bottom = -56.0
+theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
+theme_override_fonts/font = ExtResource("7_pq2v2")
+theme_override_font_sizes/font_size = 8
+text = "Almost there..."
